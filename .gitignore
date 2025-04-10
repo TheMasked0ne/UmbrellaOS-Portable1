@@ -1,0 +1,17 @@
+## gitignore
+```gitignore
+# Build files
+/build/
+/*.o
+/*.exe
+/*.out
+
+# OS stuff
+.DS_Store
+Thumbs.db
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
