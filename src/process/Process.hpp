@@ -6,12 +6,6 @@
 #include <thread>
 #include <atomic>
 
-struct Message {
-    int source;
-    int destination;
-    std::string data;
-};
-
 class Process {
 protected:
     int id;
