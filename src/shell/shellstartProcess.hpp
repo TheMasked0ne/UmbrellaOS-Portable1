@@ -1,5 +1,6 @@
 #pragma once
-#include "../process/Process.hpp"
+#include "Process.hpp"
+#include <string>
 
 class ShellProcess : public Process {
 public:
