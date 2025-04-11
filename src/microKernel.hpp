@@ -1,10 +1,12 @@
 // microKernel.hpp v 0.1
 
 #pragma once
+#include "Process.hpp"
+#include "shellstartProcess.hpp"
+#include "filesystemService.hpp"
 #include <map>
 #include <memory>
 #include <mutex>
-#include "../process/Process.hpp"
 
 class MicroKernel {
 private:
