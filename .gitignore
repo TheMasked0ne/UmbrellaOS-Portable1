@@ -5,6 +5,7 @@
 /*.o
 /*.exe
 /*.out
+/*.log
 
 # OS stuff
 .DS_Store
