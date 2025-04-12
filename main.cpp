@@ -1,12 +1,15 @@
-// main.cpp v 0.1
+// main.cpp v 0.2
 
-#include "kernel/MicroKernel.hpp"
-#include "shell/ShellProcess.hpp"
+#include "microKernel.hpp"
+#include "shellstartProcess.hpp"
+#include "filesystemService.hpp"
+#include <memory>
 
 int main() {
     MicroKernel kernel;
 
     kernel.createProcess(1, "Shell", true);
+    kernel.createProcess(3, "FileSystem");
     kernel.createProcess(2, "Logger");
 
     auto shell = std::dynamic_pointer_cast<ShellProcess>(kernel.getProcess(1));
