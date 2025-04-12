@@ -1,4 +1,4 @@
-#include "ShellProcess.hpp"
+#include "shellstartProcess.hpp"
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -10,8 +10,15 @@ std::string toLower(const std::string& str) {
     return lowerStr;
 }
 
+ShellProcess::ShellProcess(int pid, const std::string& pname)
+    : Process(pid, pname) {}
+void ShellProcess::handleMessage(const Message& msg) {
+    std::cout << "[Shell] " << msg.data << "\n";
+}
+
 void startShell() override {
     std::string input;
+    
     std::cout << R"(
 ***     .--.                 .--.
      .:' .  '.             .'  . '.
@@ -49,11 +56,4 @@ void startShell() override {
             std::cout << "[Shell] Unknown command. Type 'Pls-Assist' for help.\n";
         }
     }
-}
-
-ShellProcess::ShellProcess(int pid, const std::string& pname)
-    : Process(pid, pname) {}
-
-void ShellProcess::handleMessage(const Message& msg) {
-    std::cout << "[Shell] " << msg.data << "\n";
 }
