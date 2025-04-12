@@ -17,11 +17,7 @@ Requirements:
 - Compiler: C++ compiler supporting modern standards (e.g., GCC, Clang, MSVC).
 - Libraries: Standard C++ libraries (<iostream>, <string>, <map>, etc.).
 - Operating System: Linux, Windows, or macOS (portable design).
-
-Installation:
-- Clone the UmbrellaOS repository:git clone https://github.com/umbrellaOS/UmbrellaOS.git
-cd UmbrellaOS
-
+- Clone the UmbrellaOS repository
 - Compile the source code:g++ -std=c++17 -o UmbrellaOS main.cpp ShellProcess.cpp FileSystemService.cpp MicroKernel.cpp
 
 - Run UmbrellaOS:./UmbrellaOS
