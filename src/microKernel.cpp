@@ -1,10 +1,13 @@
 #include "MicroKernel.hpp"
-#include "../shell/ShellProcess.hpp"
+#include "shellstartProcess.hpp"
+#include <iostream>
 
 void MicroKernel::createProcess(int id, const std::string& name, bool isShell) {
     std::lock_guard<std::mutex> lock(tableMutex);
     if (isShell)
-        processTable[id] = std::make_shared<ShellProcess>(id, name);
+        processTable[id] = std::make_shared<ShellStartProcess>(id, name);
+    else if (name == "FileSystem")
+        processTable[id] = std::make_shard<FileSystemService>(id, name);
     else
         processTable[id] = std::make_shared<Process>(id, name);
 }
